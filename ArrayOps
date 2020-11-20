@@ -26,6 +26,7 @@ public class ArrayOps {
     public static int[] sumRows(int[][] matrix) {
         int x = 0;
         int[] summed;
+        summed = new int[matrix.length];
         while (x < matrix.length) {
             summed[x] = sum(matrix[x]);
             x++;
@@ -35,13 +36,14 @@ public class ArrayOps {
     public static int[] largestInRows(int[][] matrix) {
         int x = 0;
         int[] large;
+        large = new int[matrix.length];
         while (x < matrix.length) {
             large[x] = largest(matrix[x]);
             x++;
         }
         return large;
     }
-    public static int sum(int[][] arr) { 
+    public static int sum(int[][] arr) {
         return sum(sumRows(arr));
     }
 }
