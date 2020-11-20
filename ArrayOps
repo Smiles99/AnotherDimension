@@ -66,4 +66,18 @@ public class ArrayOps {
         }
         return colsum;
     }
+    public static boolean isRowMagic(int[][] matrix) {
+        int[] colsum = sumCols(matrix);
+        int x = 0;
+        int y = 0;
+        while (y < colsum.length) {
+            if (colsum[x] == colsum[y]) {
+                x++;
+                y++;
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
 }
