@@ -1,0 +1,24 @@
+public class ArrayOps {
+    public static int sum(int[] arr) {
+        int x = 0;
+        int answer = 0;
+        while (x < arr.length) {
+            answer = answer + arr[x];
+            x++;
+        }
+        return answer;
+    }
+    public static int largest(int[] arr) {
+        int x = 0;
+        int highest = 0;
+        while (x < arr.length) {
+            if (arr[x] > arr[highest]) {
+                highest = x;
+                x++;
+            } else {
+                x++;
+            }
+        }
+        return arr[highest];
+    }
+}
