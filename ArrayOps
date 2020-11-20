@@ -1,3 +1,5 @@
+import java.lang.reflect.Array;
+
 public class ArrayOps {
     public static int sum(int[] arr) {
         int x = 0;
@@ -20,5 +22,14 @@ public class ArrayOps {
             }
         }
         return arr[highest];
+    }
+    public static int[] sumRows(int[][] matrix) {
+        int x = 0;
+        int[] summed;
+        while (x < matrix.length) {
+            summed[x] = sum(matrix[x]);
+            x++;
+        }
+        return summed;
     }
 }
