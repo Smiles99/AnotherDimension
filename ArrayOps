@@ -32,4 +32,16 @@ public class ArrayOps {
         }
         return summed;
     }
+    public static int[] largestInRows(int[][] matrix) {
+        int x = 0;
+        int[] large;
+        while (x < matrix.length) {
+            large[x] = largest(matrix[x]);
+            x++;
+        }
+        return large;
+    }
+    public static int sum(int[][] arr) { 
+        return sum(sumRows(arr));
+    }
 }
