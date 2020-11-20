@@ -1,5 +1,3 @@
-import java.lang.reflect.Array;
-
 public class ArrayOps {
     public static int sum(int[] arr) {
         int x = 0;
@@ -67,17 +65,47 @@ public class ArrayOps {
         return colsum;
     }
     public static boolean isRowMagic(int[][] matrix) {
-        int[] colsum = sumCols(matrix);
+        int[] rowsum;
+        rowsum = sumRows(matrix);
         int x = 0;
-        int y = 0;
+        int y = 1;
+        int counter = 0;
+        while (y < rowsum.length) {
+            if (rowsum[x] == rowsum[y]) {
+                x++;
+                y++;
+            } else {
+                counter = 1;
+                x++;
+                y++;
+            }
+        }
+        if (counter == 1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    public static boolean isColMagic(int[][] matrix) {
+        int[] colsum;
+        colsum = sumCols(matrix);
+        int x = 0;
+        int y = 1;
+        int counter = 0;
         while (y < colsum.length) {
             if (colsum[x] == colsum[y]) {
                 x++;
                 y++;
             } else {
-                return false;
+                counter = 1;
+                x++;
+                y++;
             }
         }
-        return true;
+        if (counter == 1) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }
