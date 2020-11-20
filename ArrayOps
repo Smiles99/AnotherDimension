@@ -46,4 +46,24 @@ public class ArrayOps {
     public static int sum(int[][] arr) {
         return sum(sumRows(arr));
     }
+    public static int[] sumCols(int[][] matrix) {
+        int x = 0;
+        int y = 0;
+        int z = 0;
+        int[] colsum;
+        int answer = 0;
+        colsum = new int[matrix[x].length];
+        while (y < matrix[x].length) {
+            while (x < matrix.length) {
+                answer = answer + matrix[x][y];
+                x++;
+            }
+            x = 0;
+            colsum[z] = answer;
+            answer = 0;
+            z++;
+            y++;
+        }
+        return colsum;
+    }
 }
